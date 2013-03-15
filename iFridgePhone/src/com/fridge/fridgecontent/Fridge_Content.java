@@ -121,7 +121,7 @@ public class Fridge_Content extends Activity {
 			Product product = new Product();
 			product.setName(wordcaps.wordOrganizer(objects.get(i).getString("Product")));
 			product.setExpireDate(objects.get(i).getString("ExpireDate"));
-			product.setImage(objects.get(i).get)
+			product.setImage(objects.get(i).get )
 			productList.add(product);
 		}
 		PopulateListView();
