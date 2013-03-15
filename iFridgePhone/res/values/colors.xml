@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Red">#ff0000</color>
+    <color name="Green">#00ff00</color>
+    <color name="Blue">#0000ff</color>
+    <color name="lavenderBlush">#FFF0F5</color>
+    <color name="LightPink">#FFB6C1</color>
+    
+    <color name="DarkBlue">#0000CC</color>
+    <color name="LightBlue">#0099FF</color>
+    <color name="DarkYellow">#FFCC00</color>
+    <color name="LightYellow">#FFFF66</color>
+    <color name="Black">#000000</color>
+    <color name="White">#FFFFFF</color>
+    
+    <color name="LightGrey">#CCCCCC</color>
+    <color name="LightGrey2">#DDDDDD</color>
+    
+</resources>
