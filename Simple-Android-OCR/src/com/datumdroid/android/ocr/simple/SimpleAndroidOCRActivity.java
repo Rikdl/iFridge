@@ -53,6 +53,7 @@ public class SimpleAndroidOCRActivity extends Activity {
 	protected boolean _taken;
 	protected Camera cam;
 	private static Context cont;
+	private CameraActivity camA;
 
 	protected static final String PHOTO_TAKEN = "photo_taken";
 
@@ -60,8 +61,8 @@ public class SimpleAndroidOCRActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 
 		String[] paths = new String[] { DATA_PATH, DATA_PATH + "tessdata/" };
-		startCameraActivity();
-		cont = (Context) this;
+		
+		
 		for (String path : paths) {
 			File dir = new File(path);
 			if (!dir.exists()) {
@@ -72,7 +73,8 @@ public class SimpleAndroidOCRActivity extends Activity {
 					Log.v(TAG, "Created directory " + path + " on sdcard");
 				}
 			}
-
+			startCameraActivity();
+			
 		}
 		  
 		// lang.traineddata file with the app (in assets folder)
@@ -147,14 +149,16 @@ public class SimpleAndroidOCRActivity extends Activity {
 	        }
 		}
 	};
+	
 
 	// Simple android photo capture:
 	// http://labs.makemachine.net/2010/03/simple-android-photo-capture/
 
 	protected void startCameraActivity() {
 		
-		CameraActivity camA = new CameraActivity();
+		camA = new CameraActivity();
 		cam= camA.getmCamera();
+		cont = camA;
 		
 		
 		
@@ -279,12 +283,12 @@ public class SimpleAndroidOCRActivity extends Activity {
 	}
 	
 	
-	/** Create a file Uri for saving an image or video */
+	/** Create a file Uri for saving an image  */
 	private static Uri getOutputMediaFileUri(int type){
 	      return Uri.fromFile(getOutputMediaFile(type));
 	}
 
-	/** Create a File for saving an image or video */
+	/** Create a File for saving an image */
 	private static File getOutputMediaFile(int type){
 	    // To be safe, you should check that the SDCard is mounted
 	    // using Environment.getExternalStorageState() before doing this.
@@ -307,9 +311,6 @@ public class SimpleAndroidOCRActivity extends Activity {
 	    if (type == MEDIA_TYPE_IMAGE){
 	        mediaFile = new File(mediaStorageDir.getPath() + File.separator +
 	        "IMG_"+ timeStamp + ".jpg");
-	    } else if(type == MEDIA_TYPE_VIDEO) {
-	        mediaFile = new File(mediaStorageDir.getPath() + File.separator +
-	        "VID_"+ timeStamp + ".mp4");
 	    } else {
 	        return null;
 	    }

@@ -5,13 +5,5 @@
 	<classpathentry kind="src" path="/tess-two"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="lib" path="G:/Mijn Documenten/Downloads/adt-bundle-windows-x86_64/adt-bundle-windows-x86_64/sdk/platforms/android-10/android.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/G:/Mijn Documenten/Downloads/adt-bundle-windows-x86_64/adt-bundle-windows-x86_64/sdk/docs/reference"/>
-		</attributes>
-		<accessrules>
-			<accessrule kind="nonaccessible" pattern="com/android/internal/**"/>
-		</accessrules>
-	</classpathentry>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
