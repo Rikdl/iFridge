@@ -15,7 +15,8 @@
         <activity
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
-            android:name=".SimpleAndroidOCRActivity">
+            android:name=".SimpleAndroidOCRActivity"
+            android:screenOrientation= "landscape">"
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
 
