@@ -1,11 +1,17 @@
 package com.fridge.fridgecontent;
 
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -18,8 +24,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.fridge.application.Decompress;
 import com.fridge.application.R;
 import com.fridge.application.WordCaps;
+import com.fridge.application.download;
 import com.fridge.listview.ProductListViewAdapter;
 import com.fridge.objects.Product;
 import com.parse.FindCallback;
@@ -85,10 +93,8 @@ public class Fridge_Content extends Activity {
 				textSelectedProducts.setVisibility(View.GONE);
 				product_listview.setVisibility(View.GONE);
 				
-				
-				
-				
-				setContentView(R.layout.display);
+				//setContentView(R.layout.display);
+				createFolder();
 			}
 		});
 		
@@ -121,7 +127,6 @@ public class Fridge_Content extends Activity {
 			Product product = new Product();
 			product.setName(wordcaps.wordOrganizer(objects.get(i).getString("Product")));
 			product.setExpireDate(objects.get(i).getString("ExpireDate"));
-			product.setImage(objects.get(i).get )
 			productList.add(product);
 		}
 		PopulateListView();
@@ -148,6 +153,11 @@ public class Fridge_Content extends Activity {
 			product_listview.setAdapter(lvcAdapter);
 		}
 		
+	}
+	
+	public void createFolder(){
+		Intent intent = new Intent(this, download.class);
+		startActivity(intent);
 	}
 	
 }
