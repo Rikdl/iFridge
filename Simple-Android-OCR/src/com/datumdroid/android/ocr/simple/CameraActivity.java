@@ -1,5 +1,7 @@
 package com.datumdroid.android.ocr.simple;
 
+
+
 import android.app.Activity;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
@@ -29,9 +31,10 @@ public class CameraActivity extends Activity {
 	public static Camera getCameraInstance(){
 	    Camera c = null;
 	    try {
-	        c = Camera.open(); // attempt to get a Camera instance
-	        Parameters params = c.getParameters();
-	        params.setColorEffect("EFFECT_MONO");
+	        c = Camera.open(0); // attempt to get a Camera instance
+	        Camera.Parameters params = c.getParameters();
+	       // params.setColorEffect("EFFECT_MONO");
+	        //params.setFocusMode("FOCUS_MODE_AUTO");
 	        c.setParameters(params);
 	    }
 	    catch (Exception e){
