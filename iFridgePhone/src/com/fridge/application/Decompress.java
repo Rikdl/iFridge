@@ -1,5 +1,6 @@
 package com.fridge.application;
 
+import android.os.AsyncTask;
 import android.util.Log; 
 import java.io.File; 
 import java.io.FileInputStream; 
@@ -11,7 +12,7 @@ import java.util.zip.ZipInputStream;
  * 
  * @author jon 
  */ 
-public class Decompress { 
+public class Decompress{ 
   private String _zipFile; 
   private String _location; 
  
@@ -56,5 +57,7 @@ public class Decompress {
     if(!f.isDirectory()) { 
       f.mkdirs(); 
     } 
-  } 
+  }
+
+
 }
