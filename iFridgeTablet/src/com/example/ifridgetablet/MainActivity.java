@@ -14,6 +14,7 @@ import com.parse.PushService;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -25,6 +26,8 @@ public class MainActivity extends Activity {
 	private WordCaps wordcaps;
 	private TextView productName;
 	private TextView expireDate;
+	private String contents;
+
 	
 
 	@Override
@@ -36,29 +39,37 @@ public class MainActivity extends Activity {
 		wordcaps = new WordCaps();
 		product = new Product();
 		
-	    search();
+		//mScan();
 	    
 	    productName = (TextView) findViewById(R.id.product_content);
 	    expireDate = (TextView) findViewById(R.id.expiredate_content);
 	    
 	    
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+	
+	public void mScan(View view){
+		Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+		intent.putExtra("com.google.zxing.client.android.SCAN.SCAN_MODE", "QR_CODE_MODE");
+		startActivityForResult(intent, 123);
 	}
 	
-	public Product createDummyProduct(){
-		product.setBarcode("5449000000996");
-		return product;
+	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+		super.onActivityResult(requestCode, resultCode, intent);
+	    if (requestCode == 123) {
+	        if (resultCode == RESULT_OK) {
+	            contents = intent.getStringExtra("SCAN_RESULT");
+	            String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+	            // Handle successful scan
+	    	    search(contents);
+	        } else if (resultCode == RESULT_CANCELED) {
+	            // Handle cancel
+	        }
+	    }
 	}
 	
-	public void search(){
+	public void search(String content){
 		ParseQuery query = new ParseQuery("BarcodeScan");
-		query.whereEqualTo("Barcode", "5449000000996");
+		query.whereEqualTo("Barcode", content );
 		query.getFirstInBackground(new GetCallback() {
 			@Override
 			public void done(ParseObject object, ParseException e) {
@@ -73,14 +84,24 @@ public class MainActivity extends Activity {
 	}
 	
 	public void setProduct(ParseObject object){
-		product.setBarcode("5449000000996");
+		product.setBarcode(object.getString("Barcode"));
 		product.setName(object.getString("ProductName"));
 		product.setExpireDate("morgen");
 		
 	    productName.setText(product.getName()); 
 	    expireDate.setText(product.getExpireDate());
 	}
+
+
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
 	
+
 	
 	
 }

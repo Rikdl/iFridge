@@ -24,7 +24,6 @@ public class BarcodeReading extends Activity {
 	private TextView productName;
 	private TextView expireDate;
 
-	// test voor rik den 2de
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);

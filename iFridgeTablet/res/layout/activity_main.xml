@@ -54,18 +54,29 @@
         android:id="@+id/expiredate_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView_product"
-        android:layout_alignBottom="@+id/textView_product"
-        android:layout_alignRight="@+id/to_manual_input"
-        android:text="" />
+        android:layout_alignBaseline="@+id/textView_expiredate"
+        android:layout_alignBottom="@+id/textView_expiredate"
+        android:layout_toRightOf="@+id/textView_expiredate"
+        android:text="testdate" />
 
     <TextView
         android:id="@+id/product_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView_expiredate"
-        android:layout_alignBottom="@+id/textView_expiredate"
-        android:layout_alignLeft="@+id/expiredate_content"
-        android:text="" />
+        android:layout_alignBaseline="@+id/textView_product"
+        android:layout_alignBottom="@+id/textView_product"
+        android:layout_toRightOf="@+id/textView_product"
+        android:text="testproduct" />
+
+    <Button
+        android:id="@+id/mscan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/expiredate_content"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="110dp"
+        android:layout_toLeftOf="@+id/push_to_database"
+        android:text="mscan" 
+        android:onClick="mScan"/>
 
 </RelativeLayout>
