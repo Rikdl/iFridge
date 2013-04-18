@@ -146,49 +146,36 @@ public class download extends Activity {
 		@Override
 		protected String doInBackground(String... aurl) {
 			
-			try  { 		
-				FileInputStream fin = new FileInputStream(_zipFile); 
-				//BufferedInputStream bin = new BufferedInputStream(fin);
-				ZipInputStream zin = new ZipInputStream(new BufferedInputStream(fin)); 
-				ZipEntry ze = null; 
-				while ((ze = zin.getNextEntry()) != null) { 
-					Log.v("Decompress", "Unzipping " + ze.getName()); 
-
-					if(ze.isDirectory()) { 
-						_dirChecker(ze.getName()); 
-					} else { 
-						
-						FileOutputStream fout = new FileOutputStream(_location + ze.getName());
-						BufferedOutputStream out = new BufferedOutputStream(fout);
-						for (int c = zin.read(); c != -1; c = zin.read()) { 
-							fout.write(c); 
-						} 
-
-						zin.closeEntry(); 
-						fout.close(); 
-						
-						
-						/*BufferedOutputStream out = new BufferedOutputStream(fout);
-						
-						byte b[] = new byte[1024];
-						int n;
-						while ((n = zin.read(b,0,1024)) >= 0) {
-						  out.write(b,0,n);
-						}
-						zin.closeEntry(); 
-						fout.flush();
-						fout.close();*/					
-
-
-					} 
-					
-				}
-				zin.close(); 
-				
-			} catch(Exception e) { 
-				mProgressDialog.dismiss();
-				Log.e("Decompress", "unzip", e); 
-			}
+			try  { 
+			      FileInputStream fin = new FileInputStream(_zipFile); 
+			      ZipInputStream zin = new ZipInputStream(fin); 
+			      ZipEntry ze = null; 
+			      while ((ze = zin.getNextEntry()) != null) { 
+			        Log.v("Decompress", "Unzipping " + ze.getName()); 
+			 
+			        if(ze.isDirectory()) { 
+			          _dirChecker(ze.getName()); 
+			        } else { 
+			          FileOutputStream fout = new FileOutputStream(_location + ze.getName()); 
+			          byte[] buffer = new byte[1024];
+			          int length;
+			          while ((length = zin.read(buffer))>0) {
+			        	  fout.write(buffer, 0, length);
+			        }
+			         // for (int c = zin.read(); c != -1; c = zin.read()) { 
+			          //  fout.write(c); 
+			         // } 
+			 
+			          zin.closeEntry(); 
+			          fout.close(); 
+			        } 
+			         
+			      } 
+			      zin.close(); 
+			    } catch(Exception e) { 
+			      Log.e("Decompress", "unzip", e); 
+			    } 
+			 
 			return null; 
 
 		} 
