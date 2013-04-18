@@ -12,9 +12,9 @@ public final class R {
 	}
 	public static final class id {
 		public static final int return_scan_result = 0x7f090006;
-		public static final int meta_text_view_label = 0x7f090013;
 		public static final int barcode_image_view = 0x7f09000f;
 		public static final int meta_text_view = 0x7f090014;
+		public static final int meta_text_view_label = 0x7f090013;
 		public static final int bookmark_url = 0x7f09000b;
 		public static final int restart_preview = 0x7f090005;
 		public static final int status_view = 0x7f090019;
@@ -62,11 +62,11 @@ public final class R {
 		public static final int status_text = 0x7f070007;
 		public static final int encode_view = 0x7f070001;
 		public static final int viewfinder_mask = 0x7f07000a;
-		public static final int result_view = 0x7f070006;
 		public static final int result_points = 0x7f070004;
+		public static final int result_view = 0x7f070006;
+		public static final int result_minor_text = 0x7f070003;
 		public static final int possible_result_points = 0x7f070002;
 		public static final int contents_text = 0x7f070000;
-		public static final int result_minor_text = 0x7f070003;
 		public static final int result_text = 0x7f070005;
 		public static final int viewfinder_laser = 0x7f070009;
 		public static final int transparent = 0x7f070008;
@@ -186,8 +186,8 @@ public final class R {
 		public static final int msg_bulk_mode_scanned = 0x7f0a0030;
 		public static final int preferences_bulk_mode_summary = 0x7f0a004e;
 		public static final int preferences_result_title = 0x7f0a0061;
-		public static final int preferences_remember_duplicates_title = 0x7f0a0060;
 		public static final int button_search_book_contents = 0x7f0a0012;
+		public static final int preferences_remember_duplicates_title = 0x7f0a0060;
 		public static final int result_geo = 0x7f0a006c;
 		public static final int contents_sms = 0x7f0a0021;
 		public static final int preferences_decode_Data_Matrix_title = 0x7f0a0054;

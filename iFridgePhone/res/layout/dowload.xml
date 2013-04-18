@@ -14,4 +14,12 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content">
 	</Button>
+
+	<Button
+	    android:id="@+id/unZipBtn"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:onClick="unzip"
+	    android:text="Unzip" />
+
 </LinearLayout>
