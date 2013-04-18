@@ -29,6 +29,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 
 import com.googlecode.tesseract.android.TessBaseAPI;
 
@@ -54,6 +55,8 @@ public class SimpleAndroidOCRActivity extends Activity {
 	protected Camera cam;
 	private static Context cont;
 	private CameraActivity camA;
+	private CameraPreview mPreview;
+	private Camera mCamera;
 
 	protected static final String PHOTO_TAKEN = "photo_taken";
 
@@ -117,12 +120,38 @@ public class SimpleAndroidOCRActivity extends Activity {
 		_button.setOnClickListener(new ButtonClickHandler());
 
 		_path = DATA_PATH + "/ocr.jpg";
+		
+		 mCamera = getCameraInstance();
+        // Create our Preview view and set it as the content of our activity.
+        mPreview = new CameraPreview(this, mCamera);
+        FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
+        preview.addView(mPreview);
+	}
+	
+	/** A safe way to get an instance of the Camera object. */
+	public static Camera getCameraInstance(){
+	    Camera c = null;
+	    try {
+	        c = Camera.open(0); // attempt to get a Camera instance
+	        Camera.Parameters params = c.getParameters();
+	       // params.setColorEffect("EFFECT_MONO");
+	        //params.setFocusMode("FOCUS_MODE_AUTO");
+	        c.setParameters(params);
+	    }
+	    catch (Exception e){
+	        // Camera is not available (in use or does not exist)
+	    }
+	    return c; // returns null if camera is unavailable
+	}
+
+	public Camera getmCamera() {
+		return mCamera;
 	}
 
 	public class ButtonClickHandler implements View.OnClickListener {
 		public void onClick(View view) {
 			Log.v(TAG, "Starting Camera app");
-			cam.takePicture(null, null, mPicture);
+			mCamera.takePicture(null, null, mPicture);
 		}
 	}
 	
@@ -155,12 +184,6 @@ public class SimpleAndroidOCRActivity extends Activity {
 	// http://labs.makemachine.net/2010/03/simple-android-photo-capture/
 
 	protected void startCameraActivity() {
-		
-		camA = new CameraActivity();
-		cam= camA.getmCamera();
-		cont = camA;
-		
-		
 		
 //		File file = new File(_path);
 //		Uri outputFileUri = Uri.fromFile(file);
@@ -310,7 +333,7 @@ public class SimpleAndroidOCRActivity extends Activity {
 	    File mediaFile;
 	    if (type == MEDIA_TYPE_IMAGE){
 	        mediaFile = new File(mediaStorageDir.getPath() + File.separator +
-	        "IMG_"+ timeStamp + ".jpg");
+	        "ocr.jpg");
 	    } else {
 	        return null;
 	    }

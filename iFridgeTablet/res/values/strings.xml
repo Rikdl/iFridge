@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">iFridgeTablet</string>
+    <string name="action_settings">Settings</string>
+    <string name="product_textview">Product: </string>
+    <string name="expiredate_textview">Expiredate: </string>
+    
+
+</resources>

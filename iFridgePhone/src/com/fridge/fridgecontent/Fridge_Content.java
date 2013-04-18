@@ -1,5 +1,6 @@
 package com.fridge.fridgecontent;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -156,6 +157,16 @@ public class Fridge_Content extends Activity {
 	}
 	
 	public void createFolder(){
+		File direct = new File(Environment.getExternalStorageDirectory() + "/ProductImages_iFridge");
+
+		if(!direct.exists())
+		{
+			if(direct.mkdir()) 
+			{
+
+			}
+
+		}
 		Intent intent = new Intent(this, download.class);
 		startActivity(intent);
 	}
