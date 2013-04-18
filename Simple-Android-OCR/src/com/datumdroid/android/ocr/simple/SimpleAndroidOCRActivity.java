@@ -37,7 +37,7 @@ public class SimpleAndroidOCRActivity extends Activity {
 	public static final String DATA_PATH = Environment
 			.getExternalStorageDirectory().toString() + "/SimpleAndroidOCR/";
 	
-	public static final int MEDIA_TYPE_IMAGE = 1;
+	
 	public static final int MEDIA_TYPE_VIDEO = 2;
 	// You should have the trained data file in assets folder
 	// You can get them at:
