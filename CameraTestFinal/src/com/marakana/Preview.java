@@ -1,9 +1,11 @@
 package com.marakana;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import android.content.Context;
 import android.hardware.Camera;
+import android.hardware.Camera.Parameters;
 import android.hardware.Camera.PreviewCallback;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -31,6 +33,19 @@ class Preview extends SurfaceView implements SurfaceHolder.Callback { // <1>
     // to draw.
     camera = Camera.open(); // <8>
     try {
+		Camera.Parameters par= camera.getParameters();
+		par.setColorEffect(Parameters.EFFECT_MONO);
+		par.setFocusMode(Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+	    ArrayList<String> list = new ArrayList<String>();
+	    list = (ArrayList<String>) par.getSupportedFocusModes();
+	    System.out.println(list.toString());
+	    camera.setParameters(par);
+	} catch (Exception e1) {
+		Log.d(TAG, "Set Params failed");
+		
+	}
+    
+    try {
       camera.setPreviewDisplay(holder);  // <9>
 
       camera.setPreviewCallback(new PreviewCallback() { // <10>
@@ -48,12 +63,15 @@ class Preview extends SurfaceView implements SurfaceHolder.Callback { // <1>
   // Called when the holder is destroyed
   public void surfaceDestroyed(SurfaceHolder holder) {  // <14>
     camera.stopPreview();
+    camera.release();
+    //camera.release();
     camera = null;
   }
 
   // Called when holder has changed
   public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) { // <15>
-    camera.startPreview();
+	  camera.stopPreview();
+	  camera.startPreview();
   }
 
 }
