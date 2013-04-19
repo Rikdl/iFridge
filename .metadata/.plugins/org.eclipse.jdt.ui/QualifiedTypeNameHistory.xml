@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="com.example.ifridgetab.R"/>
+<fullyQualifiedTypeName name="android.net.ParseException"/>
+<fullyQualifiedTypeName name="com.iFridge.tablet.R"/>
+<fullyQualifiedTypeName name="android.graphics.BitmapFactory"/>
+<fullyQualifiedTypeName name="android.widget.ImageView"/>
+<fullyQualifiedTypeName name="android.graphics.Bitmap"/>
+<fullyQualifiedTypeName name="android.content.DialogInterface"/>
+<fullyQualifiedTypeName name="android.app.AlertDialog"/>
+<fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
+<fullyQualifiedTypeName name="android.content.DialogInterface.OnCancelListener"/>
+</qualifiedTypeNameHistroy>
