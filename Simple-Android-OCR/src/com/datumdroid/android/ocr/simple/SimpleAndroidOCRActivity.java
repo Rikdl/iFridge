@@ -34,6 +34,7 @@ import android.widget.FrameLayout;
 import com.googlecode.tesseract.android.TessBaseAPI;
 
 public class SimpleAndroidOCRActivity extends Activity {
+	public static final int MEDIA_TYPE_IMAGE = 1;
 	public static final String PACKAGE_NAME = "com.datumdroid.android.ocr.simple";
 	public static final String DATA_PATH = Environment
 			.getExternalStorageDirectory().toString() + "/SimpleAndroidOCR/";

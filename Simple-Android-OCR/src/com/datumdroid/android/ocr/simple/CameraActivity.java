@@ -33,8 +33,8 @@ public class CameraActivity extends Activity {
 	    try {
 	        c = Camera.open(0); // attempt to get a Camera instance
 	        Camera.Parameters params = c.getParameters();
-	       // params.setColorEffect("EFFECT_MONO");
-	        //params.setFocusMode("FOCUS_MODE_AUTO");
+	        params.setColorEffect("EFFECT_MONO");
+	        params.setFocusMode("FOCUS_MODE_AUTO");
 	        c.setParameters(params);
 	    }
 	    catch (Exception e){
