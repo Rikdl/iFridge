@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/push_to_database"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Correct Product" />
+
+    <Button
+        android:id="@+id/to_manual_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/push_to_database"
+        android:layout_alignBottom="@+id/push_to_database"
+        android:layout_alignParentLeft="true"
+        android:text="Wrong Product" />
+
+    <TextView
+        android:id="@+id/textView_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/product_textview" />
+
+    <ImageView
+        android:id="@+id/imageView_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/to_manual_input"
+        android:layout_alignLeft="@+id/textView_product"
+        android:layout_below="@+id/textView_product"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textView_expiredate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView_product"
+        android:layout_below="@+id/textView_product"
+        android:text="@string/expiredate_textview" />
+
+    <TextView
+        android:id="@+id/expiredate_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView_expiredate"
+        android:layout_alignBottom="@+id/textView_expiredate"
+        android:layout_toRightOf="@+id/textView_expiredate"
+        android:text="testdate" />
+
+    <TextView
+        android:id="@+id/product_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView_product"
+        android:layout_alignBottom="@+id/textView_product"
+        android:layout_toRightOf="@+id/textView_product"
+        android:text="testproduct" />
+
+    <Button
+        android:id="@+id/mscan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/expiredate_content"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="110dp"
+        android:layout_toLeftOf="@+id/push_to_database"
+        android:text="mscan" 
+        android:onClick="mScan"/>
+
+    <Button
+        android:id="@+id/createFolder_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/mscan"
+        android:layout_alignBottom="@+id/mscan"
+        android:layout_centerHorizontal="true"
+        android:text="download"
+        android:onClick="createFolder" />
+
+</RelativeLayout>

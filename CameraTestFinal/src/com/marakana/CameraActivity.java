@@ -33,6 +33,7 @@ public class CameraActivity extends Activity {
     buttonClick.setOnClickListener(new OnClickListener() {
       public void onClick(View v) { // <5>
         preview.camera.takePicture(shutterCallback, rawCallback, jpegCallback);
+        
       }
     });
 
@@ -70,6 +71,7 @@ public class CameraActivity extends Activity {
         e.printStackTrace();
       } finally {
       }
+      camera.startPreview();
       Log.d(TAG, "onPictureTaken - jpeg");
     }
   };
