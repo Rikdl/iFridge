@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
 import android.hardware.Camera.ShutterCallback;
@@ -60,7 +61,7 @@ public class CameraActivity extends Activity {
       FileOutputStream outStream = null;
       try {
         // Write to SD Card
-        outStream = new FileOutputStream(String.format("/sdcard/%d.jpg",
+        outStream = new FileOutputStream(String.format("/sdcard/OCR/ocr.jpg",
             System.currentTimeMillis())); // <9>
         outStream.write(data);
         outStream.close();
@@ -73,6 +74,8 @@ public class CameraActivity extends Activity {
       }
       camera.startPreview();
       Log.d(TAG, "onPictureTaken - jpeg");
+		Intent intent = new Intent("com.datumdroid.android.ocr.simple.SimpleAndroidOCRActivity");
+		startActivity(intent);
     }
   };
 

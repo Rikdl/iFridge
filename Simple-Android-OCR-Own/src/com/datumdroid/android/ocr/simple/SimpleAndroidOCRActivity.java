@@ -29,7 +29,7 @@ import com.googlecode.tesseract.android.TessBaseAPI;
 public class SimpleAndroidOCRActivity extends Activity {
 	public static final String PACKAGE_NAME = "com.datumdroid.android.ocr.simple";
 	public static final String DATA_PATH = Environment
-			.getExternalStorageDirectory().toString() + "/SimpleAndroidOCR/";
+			.getExternalStorageDirectory().toString() + "/OCR/";
 	
 	// You should have the trained data file in assets folder
 	// You can get them at:
@@ -38,11 +38,11 @@ public class SimpleAndroidOCRActivity extends Activity {
 
 	private static final String TAG = "SimpleAndroidOCR.java";
 
-	protected Button _button;
+	public Button _button;
 	// protected ImageView _image;
-	protected EditText _field;
-	protected String _path;
-	protected boolean _taken;
+	public EditText _field;
+	public String _path;
+	public boolean _taken;
 
 	protected static final String PHOTO_TAKEN = "photo_taken";
 
@@ -96,7 +96,7 @@ public class SimpleAndroidOCRActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.main);
+		setContentView(R.layout.main2);
 
 		// _image = (ImageView) findViewById(R.id.image);
 		_field = (EditText) findViewById(R.id.field);
@@ -109,7 +109,7 @@ public class SimpleAndroidOCRActivity extends Activity {
 	public class ButtonClickHandler implements View.OnClickListener {
 		public void onClick(View view) {
 			Log.v(TAG, "Starting Camera app");
-			startCameraActivity();
+			onPhotoTaken();
 		}
 	}
 
