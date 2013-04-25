@@ -13,11 +13,7 @@
     </activity>
   </application>
 
-<<<<<<< HEAD
-  <uses-sdk android:minSdkVersion="4" />
-=======
   <uses-sdk android:minSdkVersion="5" />
->>>>>>> 1917885c96c78b3df5151523afeb3afee5199ecf
   <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest> 
