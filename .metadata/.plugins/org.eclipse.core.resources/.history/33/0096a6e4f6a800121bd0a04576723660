@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:overScrollMode="always"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/product_textview" />
+
+        <TextView
+            android:id="@+id/product_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="testproduct" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView_expiredate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/expiredate_textview" />
+
+        <TextView
+            android:id="@+id/expiredate_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="testdate" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView_picture"
+        android:layout_width="90dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_launcher" />
+
+    <Button
+        android:id="@+id/mscan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mScan"
+        android:text="mscan" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+
+        <Button
+            android:id="@+id/to_manual_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wrong Product" />
+
+        <Button
+            android:id="@+id/push_to_database"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical|center_horizontal|right"
+            android:text="Correct Product" />
+    </LinearLayout>
+
+</LinearLayout>
