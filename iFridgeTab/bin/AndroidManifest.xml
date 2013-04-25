@@ -26,8 +26,9 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.iFridge.tablet.MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.iFridge.tablet.MainMenu"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,9 +49,14 @@
       			<category android:name="android.intent.category.DEFAULT"/>
     		</intent-filter>
 		</activity>
-		<activity android:name = "com.iFridge.tablet.BarcodeReading" >
+		<activity android:name = "com.iFridge.tablet.BarcodeReading"
+		    android:screenOrientation="landscape" >
 		</activity>
-		<activity android:name = "com.iFridge.application.download" >
+		<activity android:name = "com.iFridge.application.download"
+		    android:screenOrientation="landscape" >
+		</activity>
+		<activity android:name = "com.iFridge.tablet.ScanScreen"
+		    android:screenOrientation="landscape" >
 		</activity>
     </application>
 

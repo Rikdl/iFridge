@@ -125,7 +125,7 @@
   <string name="result_email_address">E-mailadres gevonden</string>
   <string name="result_geo">Geografische coördinaten gevonden</string>
   <string name="result_isbn">Boek gevonden</string>
-  <string name="result_product">Product gevonden</string>
+  <string name="result_product">Scan succesvol</string>
   <string name="result_sms">Sms-adres gevonden</string>
   <string name="result_tel">Telefoonnummer gevonden</string>
   <string name="result_text">Platte tekst gevonden</string>
