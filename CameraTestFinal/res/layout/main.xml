@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical" android:layout_width="fill_parent"
-  android:layout_height="fill_parent" android:id="@+id/layout" >
-  <!-- <1> -->
-  <!-- <2> -->
-  <FrameLayout android:id="@+id/preview"
-    android:layout_weight="1" android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-  </FrameLayout>
-  <!-- <3> -->
-  <Button android:layout_width="wrap_content"
-    android:layout_height="wrap_content" android:id="@+id/buttonClick"
-    android:text="Click" android:layout_gravity="center" />
-</LinearLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- <1> -->
+    <!-- <2> -->
+
+    <FrameLayout
+        android:id="@+id/preview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1" >
+
+    </FrameLayout>
+    <!-- <3> -->
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:gravity="bottom|center_horizontal"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="-3"
+        android:shadowRadius="3"
+        android:text="Please hold the product Date in front of the camera"
+        android:textSize="20dp" />
+
+</RelativeLayout>

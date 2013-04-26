@@ -100,17 +100,10 @@ public class SimpleAndroidOCRActivity extends Activity {
 
 		// _image = (ImageView) findViewById(R.id.image);
 		_field = (EditText) findViewById(R.id.field);
-		_button = (Button) findViewById(R.id.button);
-		_button.setOnClickListener(new ButtonClickHandler());
-
+		
 		_path = DATA_PATH + "/ocr.jpg";
-	}
-
-	public class ButtonClickHandler implements View.OnClickListener {
-		public void onClick(View view) {
-			Log.v(TAG, "Starting Camera app");
-			onPhotoTaken();
-		}
+		
+		onPhotoTaken();
 	}
 
 	// Simple android photo capture:

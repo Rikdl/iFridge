@@ -8,8 +8,7 @@ package com.datumdroid.android.ocr.simple;
 
 public final class R {
 	public static final class id {
-		public static final int field = 0x7f050004;
-		public static final int button = 0x7f050003;
+		public static final int field = 0x7f050003;
 	}
 	public static final class string {
 		public static final int hello = 0x7f040000;
