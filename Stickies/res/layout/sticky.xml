@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/folder"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#aaff0000"
+        android:visibility="visible" >
+
+        <com.deleeuw.rik.stickies.FlowLayout
+            android:id="@+id/flow"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/label" >
+
+        </com.deleeuw.rik.stickies.FlowLayout>
+
+        <RelativeLayout
+            android:id="@+id/label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="4dp" >
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Move me around. Click notification to close."
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/corner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true" android:src="@drawable/corner"/>
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/flow"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/flow"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#07000000"
+            android:ems="10"
+            android:gravity="center_vertical|top"
+            android:hint="Click to write.."
+            android:inputType="textMultiLine"
+            android:textColor="#ffffff" >
+
+            <requestFocus />
+        </EditText>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="preview"
+        android:visibility="gone" >
+    </ImageView>
+
+</FrameLayout>
