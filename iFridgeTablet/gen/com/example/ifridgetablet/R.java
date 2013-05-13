@@ -14,21 +14,8 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int Black=0x7f070014;
-        public static final int Blue=0x7f07000d;
-        public static final int DarkBlue=0x7f070010;
-        public static final int DarkYellow=0x7f070012;
-        public static final int Green=0x7f07000c;
-        public static final int LightBlue=0x7f070011;
-        public static final int LightGrey=0x7f070016;
-        public static final int LightGrey2=0x7f070017;
-        public static final int LightPink=0x7f07000f;
-        public static final int LightYellow=0x7f070013;
-        public static final int Red=0x7f07000b;
-        public static final int White=0x7f070015;
         public static final int contents_text=0x7f070000;
         public static final int encode_view=0x7f070001;
-        public static final int lavenderBlush=0x7f07000e;
         public static final int possible_result_points=0x7f070002;
         /**  Android standard ICS color 
          */
