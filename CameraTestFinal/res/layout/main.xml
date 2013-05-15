@@ -21,7 +21,7 @@
     <!-- <3> -->
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/Welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -35,7 +35,15 @@
         android:shadowColor="@android:color/black"
         android:shadowDx="-3"
         android:shadowRadius="3"
-        android:text="Please hold the product Date in front of the camera"
         android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/sepia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:src="@drawable/sepia" />
 
 </RelativeLayout>

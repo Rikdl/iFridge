@@ -16,10 +16,11 @@ class Preview extends SurfaceView implements SurfaceHolder.Callback { // <1>
 
   SurfaceHolder mHolder;  // <2>
   public Camera camera; // <3>
+  String intentArg;
 
-  Preview(Context context) {
+  Preview(Context context,String intentArg) {
     super(context);
-
+    this.intentArg = intentArg;
     // Install a SurfaceHolder.Callback so we get notified when the
     // underlying surface is created and destroyed.
     mHolder = getHolder();  // <4>
@@ -34,11 +35,30 @@ class Preview extends SurfaceView implements SurfaceHolder.Callback { // <1>
     camera = Camera.open(); // <8>
     try {
 		Camera.Parameters par= camera.getParameters();
-		par.setColorEffect(Parameters.EFFECT_MONO);
+		if(intentArg.equals("BACKGROUND"))
+		{
+			par.setColorEffect(Parameters.EFFECT_NONE);
+		
+		}
+		else
+		{			
+			par.setColorEffect(Parameters.EFFECT_MONO);
+		}
 		par.setFocusMode(Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+		
+		//For testing, getting supported picture sizes and focus modes
 	    ArrayList<String> list = new ArrayList<String>();
 	    list = (ArrayList<String>) par.getSupportedFocusModes();
 	    System.out.println(list.toString());
+	    ArrayList<Camera.Size> list2 = new ArrayList<Camera.Size>();
+	    list2 = (ArrayList<Camera.Size>) par.getSupportedPictureSizes();
+	    Camera.Size result = null;
+	    for (int i=0;i<list2.size();i++){
+	        result = (Camera.Size) list2.get(i);
+	        Log.d("PictureSize", "Supported Size. Width: " + result.width + "height : " + result.height); 
+	    }
+	    
+	    
 	    camera.setParameters(par);
 	} catch (Exception e1) {
 		Log.d(TAG, "Set Params failed");
@@ -74,4 +94,12 @@ class Preview extends SurfaceView implements SurfaceHolder.Callback { // <1>
 	  camera.startPreview();
   }
 
+  public void changeToSepia(){
+	  
+	  Camera.Parameters par= camera.getParameters();
+      par.setColorEffect(Parameters.EFFECT_SEPIA);
+      par.setFocusMode(Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+	  camera.setParameters(par);
+	  
+  }
 }
